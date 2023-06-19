@@ -1,1 +1,104 @@
+What is state file in terraform?
+
+In Terraform, a state file is a JSON formatted file that is automatically generated and used to store the state of your infrastructure.
+It serves as a source of truth for Terraform to understand the current state of your resources managed by Terraform.
+The state file keeps track of the resources you've provisioned using Terraform, their configuration, and their current status. 
+It includes information such as resource IDs, attribute values, dependencies, and metadata. Terraform uses this state information to plan and manage changes to your infrastructure.
+It's important to treat the state file as a valuable artifact of your infrastructure.
+It should be stored securely and version controlled to maintain consistency and enable collaboration among team members.
+
+
+#####################################################################################################################################
+
+Where do you store stste file in terraform?
+
+In Terraform, you can store the state file in various locations, depending on your requirements and 
+
+the infrastructure you are managing. Here are some common options for storing the state file:
+Local Storage: By default, Terraform stores the state file locally in a file named terraform.
+tfstate in the current working directory. This approach is suitable for individual developers working on a project alone,
+but it's not recommended for collaborative or production environments.
+
+Remote Storage: 
+Terraform Cloud: 
+Amazon S3:
+Azure Blob Storage: 
+Google Cloud Storage: 
+Consul: 
+Etcd:
+
+#########################################################################################################################################
+
+How do you lock a state file?
+
+To prevent modifications to the state file by multiple users or processes.
+Here are some common methods for locking a state file:
+
+Terraform Cloud:
+Consul:
+Amazon S3: 
+
+
+########################################################################################################################################
+
+What if state file lost in terraform?
+
+If the state file is lost or becomes inaccessible, you may face several challenges:
+Lack of Infrastructure Visibility:
+Inability to Perform Terraform Operations:
+Inability to Perform Terraform Operations:
+
+To mitigate the impact of a lost state file, consider the following steps:
+
+Recreate the State File: If possible, try to recreate the state file by gathering information from various sources. 
+This may involve retrieving resource configurations from your infrastructure provider's console, reviewing infrastructure code, or consulting with team members who have knowledge of the infrastructure.
+
+Import Existing Resources: If you cannot recreate the state file accurately, you can use the terraform import command to bring the existing resources under Terraform management.
+This allows you to import resources into the state file without modifying their configurations. However, this approach may be time-consuming, especially if you have a large number of resources.
+
+Backup and Version Control: Learn from the experience and implement better practices for managing your state files.
+Always back up your state files and consider using version control systems to track changes and enable collaboration among team members.
+
+############################################################################################################################################
+
+
+How do you import manually created resource into terraform?
+
+terraform import RESOURCE_TYPE.RESOURCE_NAME RESOURCE_ID
+
+terraform import aws_instance.example i-1234567890abcdef0
+
+
+
+
+########################################################################################################################################
+
+How doy delete a speccific resourse in terraform?
+
+
+Identify the Resource:
+Run terraform destroy: 
+
+terraform destroy -target=RESOURCE_TYPE.RESOURCE_NAME
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
